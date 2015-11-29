@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<included>
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level
+				%logger{36}.%M -
+				%msg%n</pattern>
+		</layout>
+	</appender>
+
+	<!-- 文件输出日志 (文件大小策略进行文件输出，超过指定大小对文件备份) -->
+	<appender name="INFO-FILE"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>INFO</level>
+		</filter>
+		<file>/home/work/var/log/crm/crm.info.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>/home/work/var/log/crm/crm.info.%d{yyyy-MM-dd}.log
+			</fileNamePattern>
+			<maxHistory>60</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%date{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level
+				%logger{36}.%M - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="ERROR-FILE"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>ERROR</level>
+		</filter>
+		<file>/home/work/var/log/crm/crm.error.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>/home/work/var/log/crm/crm.error.%d{yyyy-MM-dd}.log
+			</fileNamePattern>
+			<maxHistory>60</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%date{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level
+				%logger{36}.%M - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<!-- 文件输出日志 (文件大小策略进行文件输出，超过指定大小对文件备份) -->
+	<appender name="SQL-FILE"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>INFO</level>
+		</filter>
+		<file>/home/work/var/log/crm/crm.sql.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>/home/work/var/log/crm/crm.sql.%d{yyyy-MM-dd}.log
+			</fileNamePattern>
+			<maxHistory>60</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%date{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level
+				%logger{36}.%M - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<!-- 文件输出日志 (文件大小策略进行文件输出，超过指定大小对文件备份) -->
+	<appender name="FOLIO_LOG_INFO-FILE"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>INFO</level>
+		</filter>
+		<file>/home/work/var/log/crm/folio/crm_folio.info.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>/home/work/var/log/crm/folio/crm_folio.info.%d{yyyy-MM-dd}.log
+			</fileNamePattern>
+			<maxHistory>60</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%date{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level
+				%logger{36}.%M - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="FOLIO_LOG_ERROR-FILE"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>ERROR</level>
+		</filter>
+		<file>/home/work/var/log/crm/folio/crm_folio.error.log
+		</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>/home/work/var/log/crm/folio/crm_folio.error.%d{yyyy-MM-dd}.log
+			</fileNamePattern>
+			<maxHistory>60</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%date{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level
+				%logger{36}.%M - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+
+	<!-- 文件输出日志 (文件大小策略进行文件输出，超过指定大小对文件备份) -->
+	<appender name="BATCH_LOG_INFO-FILE"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>INFO</level>
+		</filter>
+		<file>/home/work/var/log/crm/batch/crm_batch.info.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>/home/work/var/log/crm/batch/crm_batch.info.%d{yyyy-MM-dd}.log
+			</fileNamePattern>
+			<maxHistory>60</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%date{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level
+				%logger{36}.%M - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="BATCH_LOG_ERROR-FILE"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>ERROR</level>
+		</filter>
+		<file>/home/work/var/log/crm/batch/crm_batch.error.log
+		</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>/home/work/var/log/crm/batch/crm_batch.error.%d{yyyy-MM-dd}.log
+			</fileNamePattern>
+			<maxHistory>60</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%date{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level
+				%logger{36}.%M - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<logger name="jdbc.sqltiming" additivity="false" level="INFO">
+		<appender-ref ref="SQL-FILE" />
+		<appender-ref ref="STDOUT" />
+	</logger>
+	<logger name="jdbc.sqlonly" additivity="false" level="OFF" />
+	<logger name="jdbc.audit" additivity="false" level="OFF" />
+	<logger name="jdbc.resultset" additivity="false" level="OFF" />
+	<logger name="jdbc.resultsettable" additivity="false" level="OFF">
+	</logger>
+	<logger name="jdbc.connection" additivity="false" level="OFF" />
+
+	<root level="Info">
+		<appender-ref ref="STDOUT" />
+		<appender-ref ref="INFO-FILE" />
+		<appender-ref ref="ERROR-FILE" />
+	</root>
+</included>
