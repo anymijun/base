@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
+	pageEncoding="utf-8"%>
 <!DOCTYPE html >
 <html>
 <head>
@@ -7,7 +7,7 @@
 <title>错误页面</title>
 </head>
 <body>
- <h2>错误码：${errCode}</h2>
- <p>错误原因：${errDesc}</p>
+	<h2>错误码：${errCode}</h2>
+	<p>错误原因：${errDesc}</p>
 </body>
 </html>
