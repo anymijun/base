@@ -135,35 +135,4 @@ public class RedisUtil {
 				});
 		return (JedisAutoReturn) proxy;
 	}
-
-	public static void main(String[] args) {
-		// ShardedJedis jedis = null;
-		// try {
-		// jedis = getJedis();
-		// jedis.hset("test.set", "name", "z3");
-		// jedis.hset("test.set", "sex", "male");
-		// Map<String, String> v = jedis.hgetAll("test.set");
-		// System.out.println(v);
-		// } finally {
-		// getPool().returnResource(jedis);
-		// }
-
-		JedisAutoReturn jc = RedisUtil.getInstance().getJedisAutoReturn();
-		// // jc.set("name".getBytes(), "40".getBytes());
-		System.out.println(new String(jc.get("name".getBytes())));
-
-		System.out.println(jc.hgetAll("test.set"));
-
-		// Map map = jc.hgetAll("test.set".getBytes());
-		// for (Object o : map.entrySet()) {
-		// Entry e = (Entry) o;
-		// System.out.println(new String((byte[]) e.getKey()) + ":" + new
-		// String((byte[]) e.getValue()));
-		// }
-
-		// ShardedJedis j=getJedisCglib();
-		// System.out.println(j.hgetAll("test.set"));
-
-	}
-
 }
