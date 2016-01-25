@@ -16,7 +16,7 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-public class ExcelUtil {
+public class ExcelUtilTest {
 	public static final String OFFICE_2003 = ".xls";
 
 	public static final String OFFICE_2007 = ".xlsx";
@@ -26,9 +26,9 @@ public class ExcelUtil {
 		Workbook workBook = null;
 		fileInput = new FileInputStream(tplPath);
 		String postfix = tplPath.substring(tplPath.lastIndexOf("."));
-		if (postfix.endsWith(ExcelUtil.OFFICE_2003)) {
+		if (postfix.endsWith(ExcelUtilTest.OFFICE_2003)) {
 			workBook = new HSSFWorkbook(new POIFSFileSystem(fileInput));
-		} else if (postfix.endsWith(ExcelUtil.OFFICE_2007)) {
+		} else if (postfix.endsWith(ExcelUtilTest.OFFICE_2007)) {
 			workBook = new XSSFWorkbook(fileInput);
 		}
 		return workBook;
@@ -44,19 +44,20 @@ public class ExcelUtil {
 		while (row != null) {
 			try {
 				Cell cell1 = row.getCell(col1);
-				if (cell1 != null) {
+				if (cell1 != null && !cell1.getStringCellValue().trim().equals("")) {
+					
 					String val = ShortDataCryptUtil.decrypt(cell1.getStringCellValue());
 					System.out.println(val);
 					cell1.setCellValue(val);
 				}
 				Cell cell2 = row.getCell(col2);
-				if (cell2 != null) {
+				if (cell2 != null&&!cell2.getStringCellValue().trim().equals("")) {
 					String val = ShortDataCryptUtil.decrypt(cell2.getStringCellValue());
 					System.out.println(val);
 					cell2.setCellValue(val);
 				}
 				Cell cell3 = row.getCell(col3);
-				if (cell3 != null) {
+				if (cell3 != null&&!cell3.getStringCellValue().trim().equals("")) {
 					String val = ShortDataCryptUtil.decrypt(cell3.getStringCellValue());
 					System.out.println(val);
 					cell3.setCellValue(val);
@@ -85,7 +86,7 @@ public class ExcelUtil {
 
 	public static void main(String[] args) {
 		try {
-			ExcelUtil.readAndWrite("D:\\test\\phones.xls",1,2,3, "D:\\test\\phones_bak.xls");
+			ExcelUtilTest.readAndWrite("D:\\test\\phones.xls",2,3,4, "D:\\test\\phones_bak.xls");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

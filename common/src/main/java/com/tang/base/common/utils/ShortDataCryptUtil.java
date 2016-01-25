@@ -168,4 +168,17 @@ public class ShortDataCryptUtil {
 		return result;
 
 	}
+	public static void main(String[] args) {
+		try {
+			System.out.println(decrypt("CD2ABB152F73E7AE3EBB2EB3E76C0A65"));
+			System.out.println(encrypt("13382022105"));
+			System.out.println("CD2ABB152F73E7AE3EBB2EB3E76C0A65".length());
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 }

@@ -27,7 +27,11 @@
 			<artifactId>base-model</artifactId>
 			<version>${project.version}</version>
 		</dependency>
-
+		<dependency>
+			<groupId>com.tang.base</groupId>
+			<artifactId>base-api</artifactId>
+			<version>${project.version}</version>
+		</dependency>
 		<!-- spring core start -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -167,6 +171,23 @@
 			<scope>provided</scope>
 		</dependency>
 		<!-- servlet end -->
+		<!-- dubbo start -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>dubbo</artifactId>
+			<version>2.5.3</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.jboss.netty</groupId>
+  					<artifactId>netty</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<!-- dubbo end -->
 	</dependencies>
 	<build>
 		<resources>
